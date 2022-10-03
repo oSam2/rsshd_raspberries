@@ -8,7 +8,7 @@ USER root
 #     chown -R autossh:autossh /home/autossh/ && \
 #     chmod 700 /home/autossh/.ssh
 
-RUN apk --update add openssh && \
+RUN apk --update add openssh-server-pam &&\
     addgroup -S autossh && \
     adduser -D -s /bin/true -G autossh autossh && \
     mkdir -p /home/autossh/.ssh && \
