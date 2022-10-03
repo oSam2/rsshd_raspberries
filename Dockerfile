@@ -1,13 +1,14 @@
 FROM arm32v7/alpine:3.16.2
 
 USER root
-RUN apk --update add --no-cache openssh-server-pam &&\
-    addgroup -S autossh && \
-    adduser -D -s /bin/true -G autossh autossh && \
-    mkdir -p /home/autossh/.ssh && \
-    chown -R autossh:autossh /home/autossh/ && \
-    chmod 700 /home/autossh/.ssh
+# RUN apk --update add --no-cache openssh-server-pam &&\
+#     addgroup -S autossh && \
+#     adduser -D -s /bin/true -G autossh autossh && \
+#     mkdir -p /home/autossh/.ssh && \
+#     chown -R autossh:autossh /home/autossh/ && \
+#     chmod 700 /home/autossh/.ssh
 
+RUN apk --update add openssh
 
 COPY sshd.sh /usr/local/bin/
 
