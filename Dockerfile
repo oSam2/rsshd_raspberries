@@ -38,4 +38,4 @@ VOLUME /etc/ssh/keys
 VOLUME /home/autossh/.ssh
 
 
-ENTRYPOINT /usr/sbin/sshd.sh
+ENTRYPOINT /usr/local/bin/sshd.sh
